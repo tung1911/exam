@@ -4,17 +4,17 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int a,b,res;
+	float a,b,res;
 	char op,ans;
 	
 	
 	
    do{	
 	printf("nhap so thu 1:\n");
-	scanf("%d",&a);
+	scanf("%f",&a);
 	
 	printf("nhap so thu 2:\n");
-	scanf("%d",&b);
+	scanf("%f",&b);
 
     fflush(stdin);
 	
@@ -26,24 +26,24 @@ int main(int argc, char *argv[]) {
 	{
 		case '+':
 			res=a+b;
-			printf("%d+%d=%d\n",a,b,res);
+			printf("%f+%f=%f\n",a,b,res);
 			break;
 			
 		case '-':
 		   res=a-b;
-		   printf("%d-%d=%d\n",a,b,res);
+		   printf("%f-%f=%f\n",a,b,res);
 		   break;
 		
 		case '*':
 		   res=a*b;
-		   printf("%d*%d=%d\n",a,b,res);
+		   printf("%f*%f=%f\n",a,b,res);
 		   break;
 		
 		case'/':
 		   if(b==0){
 		   printf("khong chia dc cho 0\n");}
 	       res=a/b;
-		   printf("%d/%d=%d\n",a,b,res);
+		   printf("%f/%f=%f\n",a,b,res);
 		   break;
 		   
 	    default:
