@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
     fflush(stdin);
 	
 	
-	printf("1:phep cong(+)   2:phep tru(-)   3:phep nhan(*)  4:phep chia(/)  5:exit(anykey)\n");
+	printf("1:phep cong(+)   2:phep tru(-)   3:phep nhan(*)  4:phep chia(/)  5:exit(N)\n");
 	scanf("%c",&op);
 	
 	switch(op)
@@ -48,6 +48,7 @@ int main(int argc, char *argv[]) {
 		   
 	    default:
 	    	printf("hen gap lai\n");
+	    	return 0;
 	    	break;
 		   
 	}
