@@ -40,6 +40,8 @@ int main(int argc, char *argv[]) {
 		   break;
 		
 		case'/':
+		   if(b==0){
+		   printf("khong chia dc cho 0\n");}
 	       res=a/b;
 		   printf("%d/%d=%d\n",a,b,res);
 		   break;
