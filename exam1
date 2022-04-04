@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	int a,b,res;
+	char op,ans;
+	
+	
+	
+   do{	
+	printf("nhap so thu 1:\n");
+	scanf("%d",&a);
+	
+	printf("nhap so thu 2:\n");
+	scanf("%d",&b);
+
+    fflush(stdin);
+	
+	
+	printf("1:phep cong(+)   2:phep tru(-)   3:phep nhan(*)  4:phep chia(/)  5:exit\n");
+	scanf("%c",&op);
+	
+	switch(op)
+	{
+		case '+':
+			res=a+b;
+			printf("%d+%d=%d\n",a,b,res);
+			break;
+			
+		case '-':
+		   res=a-b;
+		   printf("%d-%d=%d\n",a,b,res);
+		   break;
+		
+		case '*':
+		   res=a*b;
+		   printf("%d*%d=%d\n",a,b,res);
+		   break;
+		
+		case'/':
+	       res=a/b;
+		   printf("%d/%d=%d\n",a,b,res);
+		   break;
+		   
+	    default:
+	    	printf("hen gap lai\n");
+	    	break;
+		   
+	}
+	     fflush(stdin);
+	    printf("ban co muon lam phep tinh khac(Y/N)\n");
+	    scanf("%c",&ans);
+	}
+	
+      while(ans=='y'||ans=='Y');
+      printf("hen gap lai");
+	
+	
+	return 0;
+}
