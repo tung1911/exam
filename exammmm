@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>exam</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    span{
+      color:red;
+      display: block;
+      padding: 5px 0px;
+    }
+    .button{
+    .button:hover {background-color: #3e8e41}
+
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+  </style>
+  <script>
+
+    function getValue(id){
+      return document.getElementById(id).value.trim();
+    }
+
+
+    function showError(key, mess){
+      document.getElementById(key + '_error').innerHTML = mess;
+    }
+
+    function validate()
+    {
+      var flag = true;
+
+      var username = getValue('username');
+      if (username == '' || username.length < 5 || !/^[a-zA-Z0-9]+$/.test(username)){
+        flag = false;
+        showError('username', 'Kiểm tra lại Username');
+      }
+
+      var password = getValue('password');
+      var repassword = getValue('repassword');
+      if (password == '' || password.length < 8 || password != repassword){
+        flag = false;
+        showError('password', 'Kiểm tra lại Password');
+      }
+
+      var email = getValue('email');
+      var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if (!mailformat.test(email)){
+        flag = false;
+
+        showError('email', 'Kiểm tra lại Email');
+      }
+
+      return flag;
+    }
+  </script>
+</head>
+<body style="margin: 50px;">
+<form method="post" action="" id="loginform">
+  <table border="1" cellpadding="10">
+    <tr>
+      <td>UserName:</td>
+      <td>
+        <input type="text" id="username" name="username" value=""/>
+        <span id="username_error"></span>
+      </td>
+    </tr>
+    <tr>
+      <td>password</td>
+      <td>
+        <input type="text" id="password" name="password" value=""/>
+        <span id="password_error"></span>
+      </td>
+    </tr>
+    <tr>
+      <td>re-password</td>
+      <td>
+        <input type="text" id="repassword" name="repassword" value=""/>
+        <span id="repassword_error"></span>
+      </td>
+    </tr>
+    <tr>
+
+    </tr>
+    <tr>
+      <td>Email </td>
+      <td>
+        <input type="text" id="email" name="email" value=""/>
+        <span id="email_error"></span>
+      </td>
+    </tr>
+
+    <tr>
+    </tr>
+
+    <tr>
+      <td><input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">I agree to the Terms of Servicee</label>
+      </td>
+      <td>
+
+        <input type="submit" onclick="return validate();" id="btn" name="btn" value="Đăng ký"/>
+      </td>
+    </tr>
+  </table>
+</form>
+<button class="button">Already a member?login here</button>
+</body>
+</html>
