@@ -12,8 +12,8 @@ function matchPassword() {
     var pw1 = document.getElementById("exampleInputPassword1");
     var pw2 = document.getElementById("exampleInputPassword2");
     if (pw1 == pw2) {
-        elMsg.textContent = 'Passwords did not match'
+        elMsg.textContent = 'Password created successfully'
     } else {
-        elMsg.textContent = '    Password created successfully'
+        elMsg.textContent = '    Passwords did not match'
     }
-}
+
